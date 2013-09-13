@@ -65,7 +65,7 @@ describe Rack::JSON do
       it 'responds with a bad request message' do
         result = subject.call env
         response = Rack::MockResponse.new(*result)
-        response.must_be :bad_request?
+        response.bad_request?.must_equal true
       end
     end
 
