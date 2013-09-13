@@ -19,7 +19,8 @@ module Rack
 
     # Override for different error behavior
     def on_parse_error(e)
-      [400, {'Content-Length' => 0}, []]
+      message = "Invalid JSON"
+      [400, {'Content-Length' => message.length}, [message]]
     end
 
     def initialize(app)
